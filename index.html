@@ -1,0 +1,90 @@
+
+ 
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LUMIÈRE | Silk Hydrating Foundation</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">Lumière</div>
+    <button class="cart-btn">
+      Bag <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- MAIN PRODUCT SECTION -->
+  <main class="container">
+    
+    <!-- LEFT: GALLERY -->
+    <section class="gallery">
+      <div class="main-image-container">
+        <img id="mainImage" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" alt="Lumiere Silk Foundation Bottle">
+      </div>
+      <div class="thumbnail-row">
+        <div class="thumb active" data-img="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800&auto=format&fit=crop&q=80" alt="Bottle Front">
+        </div>
+        <div class="thumb" data-img="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=800&auto=format&fit=crop&q=80" alt="Swatch Texture">
+        </div>
+        <div class="thumb" data-img="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&auto=format&fit=crop&q=80">
+          <img src="https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=800&auto=format&fit=crop&q=80" alt="Model Application">
+        </div>
+      </div>
+    </section>
+
+    <!-- RIGHT: PRODUCT DETAILS -->
+    <section class="details">
+      <div class="badges">
+        <span>Cruelty-Free</span> • <span>Vegan</span> • <span>Hyaluronic Acid</span>
+      </div>
+
+      <h1>Silk Hydrating Foundation</h1>
+
+      <div class="price-row">
+        <span class="price">$48.00</span>
+        <span class="rating">★★★★★ 4.8 (1,240 Reviews)</span>
+      </div>
+
+      <p class="description">
+        A lightweight, medium-buildable coverage foundation infused with botanical oils and serum-grade skin-loving ingredients for a dewy, second-skin finish.
+      </p>
+
+      <!-- SHADE SELECTOR -->
+      <div>
+        <div class="shade-header">
+          <span class="section-title">Selected Shade: <strong id="shadeName">110 Fair Warm</strong></span>
+          <span class="quiz-link" id="openQuizBtn">Find My Shade</span>
+        </div>
+        <div class="swatches">
+          <div class="swatch active" style="background-color: #f3dfd2;" data-shade="110 Fair Warm"></div>
+          <div class="swatch" style="background-color: #e2be9e;" data-shade="210 Medium Neutral"></div>
+          <div class="swatch" style="background-color: #a3724c;" data-shade="340 Tan Warm"></div>
+          <div class="swatch" style="background-color: #59351e;" data-shade="420 Deep Cool"></div>
+        </div>
+      </div>
+
+      <!-- ADD TO BAG -->
+      <button class="cta-button" id="addToCartBtn">Add to Bag — $48.00</button>
+
+      <!-- VALUE PROPS -->
+      <div class="benefits">
+        <div>✓ Free shipping on orders over $50</div>
+        <div>✓ 30-day shade match guarantee</div>
+        <div>✓ Non-comedogenic & dermatologist tested</div>
+        <div>✓ Recyclable glass packaging</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SHADE MATCH MODAL -->
+  <div class="modal" id="quizModal">
+    <div class="modal-content">
+      <button class="close-modal 
+    
