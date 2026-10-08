@@ -1,0 +1,296 @@
+/* --- CSS RESET & VARIABLES --- */
+:root {
+  --bg-color: #fcfbfa;
+  --card-bg: #ffffff;
+  --text-main: #1f1f1f;
+  --text-muted: #666666;
+  --accent-color: #2b2b2b;
+  --border-color: #eae7e1;
+  --highlight: #d4a373;
+  --font-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  --radius: 8px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.5;
+}
+
+/* --- HEADER --- */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 5%;
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.brand {
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.cart-btn {
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  position: relative;
+  font-weight: 600;
+}
+
+.cart-count {
+  background: var(--highlight);
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 2px 6px;
+  border-radius: 50%;
+  margin-left: 4px;
+}
+
+/* --- MAIN PRODUCT LAYOUT --- */
+.container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin: 20px auto;
+  }
+}
+
+/* --- PRODUCT GALLERY --- */
+gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.main-image-container {
+  width: 100%;
+  height: 480px;
+  background: #f0ece1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.thumbnail-row {
+  display: flex;
+  gap: 12px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid transparent;
+  opacity: 0.7;
+  transition: all 0.2s ease;
+}
+
+.thumb.active, .thumb:hover {
+  border-color: var(--accent-color);
+  opacity: 1;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- PRODUCT DETAILS & SELECTION --- */
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.badges {
+  display: flex;
+  gap: 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: var(--highlight);
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.price-row {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.rating {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* Shade Selector */
+.section-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.shade-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.quiz-link {
+  font-size: 0.85rem;
+  color: var(--highlight);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.swatches {
+  display: flex;
+  gap: 12px;
+}
+
+.swatch {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid #fff;
+  outline: 1px solid var(--border-color);
+  transition: transform 0.2s ease;
+}
+
+.swatch:hover, .swatch.active {
+  transform: scale(1.15);
+  outline: 2px solid var(--accent-color);
+}
+
+/* Actions */
+.cta-button {
+  width: 100%;
+  padding: 16px;
+  background: var(--accent-color);
+  color: #fff;
+  border: none;
+  border-radius: var(--radius);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.cta-button:hover {
+  background: #000;
+}
+
+/* Benefits List */
+.benefits {
+  border-top: 1px solid var(--border-color);
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* --- SHADE FINDER MODAL --- */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 200;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: var(--radius);
+  max-width: 450px;
+  width: 90%;
+  position: relative;
+}
+
+.close-modal {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.quiz-options button {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  background: var(--bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  cursor: pointer;
+  text-align: left;
+}
+
+.quiz-options button:hover {
+  border-color: var(--accent-color);
+}
